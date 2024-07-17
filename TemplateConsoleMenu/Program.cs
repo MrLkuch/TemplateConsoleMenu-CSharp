@@ -46,60 +46,60 @@ static void ShowMenu()
 
 static int ReadNumericInput(int min, int max)
 {
-    int resultat = 0;
+    int result = 0;
     string input;
-    bool estValide;
+    bool isValid;
 
     do
     {
         Console.Write($"Your choice ({min}-{max}) : ");
         input = Console.ReadLine();
 
-        // Vérifier si l'input est vide ou ne contient que des espaces
+        // Verify if the input is empty or only space
         if (string.IsNullOrWhiteSpace(input))
         {
             Console.WriteLine("The input cannot be empty");
-            estValide = false;
+            isValid = false;
             continue;
         }
 
-        // Essayer de convertir l'input en int
-        if (!int.TryParse(input, out resultat))
+        // Try to convert to int
+        if (!int.TryParse(input, out result))
         {
             Console.WriteLine("Input a valid number");
-            estValide = false;
+            isValid = false;
             continue;
         }
 
-        // Vérifier si le nombre est dans la plage valide
-        if (resultat < min || resultat > max)
+        // Verify if number is in the valid range
+        if (result < min || result > max)
         {
             Console.WriteLine($"The input must be between {min} and {max}.");
-            estValide = false;
+            isValid = false;
             continue;
         }
 
-        estValide = true;
+        isValid = true;
 
-    } while (!estValide);
+    } while (!isValid);
 
-    return resultat;
+    return result;
 }
 
 static void Option1()
 {
     Console.WriteLine("option 1");
-    // Ajoutez ici le code pour l'option 1
+    // code for option 1
 }
 
 static void Option2()
 {
     Console.WriteLine("option 2");
-    // Ajoutez ici le code pour l'option 2
+    // code for option 2
 }
 
 static void Option3()
 {
     Console.WriteLine("option 3");
-    // Ajoutez ici le code pour l'option 3
+    // code for option 3
 }
